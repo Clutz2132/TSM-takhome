@@ -18,45 +18,50 @@ This project demonstrates how to build and deploy a scalable web application on 
 - Docker
 
 ## Setup Instructions
-Follow these steps to setup your environment and deploy the web application.  
+Follow these steps to setup your environment and deploy the web application. Code snippets are below and you can find more in-depth details in the step by step guide.   
 
 1) Authenticate doctl with your DigitalOcean account
-    doctl auth init
 2) Create the Flask application
-   A) Create a new directory for your project
-      mkdir flask-app
-      cd flask-app
-   B) Create the app.py file with a "Hello World" Flask appication
-        from flask import Flask
-        app = Flask(__name__)
-        
-        @app.route('/')
-        def hello_world():
-            return 'Hello, World!'
-        
-        if __name__ == '__main__':
-            app.run(host='0.0.0.0', port=80)
-   C) Create a requiremnts.txt file for depenendices
-      Flask
-4) Dockerize the application
-    A) Create a Dockerfile to containerize the app
-      FROM python:3.8-slim
-      WORKDIR /app
-      COPY . .
-      RUN pip install -r requirements.txt
-      EXPOSE 80
-      CMD ["python", "app.py"]
-   B) Build the Docker image
-      docker build -t flask-app .
-   C)
+   - Create a new directory for your project
+   - Create the app.py file with a simple Flask application
+   - Create a requirements.txt file to specify dependendinces
+3) Dockerize the application
+   - Create a Dockerfile to containerize the app
+   - Build the Docker image
+   - Run the container locally to test
+4) Push the Docker image to DigitalOcean
+   - Create a contianer registry on DigitalOcean
+   - Tag and push the Docker image
+5) Create and deploy a Kubernetes cluster
+   - Create a Kubernetes cluster
+   - Deploy the application to Kubernetes
+6) Expose the application
+   - Expose the application with a load balancer to make it accessible externally
+7) Enable autoscaling
+   - Enable Horizontal pod autoscaling (HPA) based on CPU usage
+8) Monitor and scale the application
+   - Check the status of your cluster and pods
+   - Scale the application
+9) Cost optimization
+   - Autoscaling with HPA and cluster technicques
+   - Load balancing
+   - Spot instances
+   - Right sizing nodes based on resource utilization metrics
+  
+## Detailed stepp by step guide link
+caymnlutz.com (fake)
 
-   D)
-
-   E)
-
-   F)
-
+## Conclusion 
+This project demonstrated how to deploy a scalable, containerized web applicaiton on DigitalOcean using Kubernetes. 
 
 
 
    
+
+
+
+
+
+
+
+
