@@ -30,28 +30,45 @@ Put snippet of diagram here
 doct auth init 
 ```
 
-3) Create the Flask application
-   - Create a new directory for your project
-   - Create the app.py file with a simple Flask application
+3) Create Flask application
+   - Create app.py file 
+
+   ```
+   from flask import Flask
+import os
+import socket
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    html = """Hello {name}!
+    Hostname: {hostname}"""
+    return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname())
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80)
+    ```
+
    - Create a requirements.txt file to specify dependendinces
-4) Dockerize the application
+3) Dockerize the application
    - Create a Dockerfile to containerize the app
    - Build the Docker image
    - Run the container locally to test
-5) Push the Docker image to DigitalOcean
+4) Push the Docker image to DigitalOcean
    - Create a contianer registry on DigitalOcean
    - Tag and push the Docker image
-6) Create and deploy a Kubernetes cluster
+5) Create and deploy a Kubernetes cluster
    - Create a Kubernetes cluster
    - Deploy the application to Kubernetes
-7) Expose the application
+6) Expose the application
    - Expose the application with a load balancer to make it accessible externally
-8) Enable autoscaling
+7) Enable autoscaling
    - Enable Horizontal pod autoscaling (HPA) based on CPU usage
-9) Monitor and scale the application
+8) Monitor and scale the application
    - Check the status of your cluster and pods
    - Scale the application
-10) Cost optimization
+9) Cost optimization
    - Autoscaling with HPA and cluster technicques
    - Load balancing
    - Spot instances
