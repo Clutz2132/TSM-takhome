@@ -56,9 +56,6 @@ doct auth init
    - Load balancing
    - Spot instances
    - Right sizing nodes based on resource utilization metrics
-  
-## Detailed stepp by step guide link
-caymnlutz.com (fake)
 
 ## Conclusion 
 This project demonstrated how to deploy a scalable, containerized web applicaiton on DigitalOcean using Kubernetes. 
