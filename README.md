@@ -159,10 +159,12 @@ doct auth init
    - Right size nodes based on resource utilization metrics
 
 ## Conclusion 
+This project demonstrates how to deploy a scalable, contanerized web-application on DigitalOcean using Kubernetes. By following these steps, you can create a robust and efficient deployment with optimized costs and performance. 
 
-This project demonstrates a scalable, cost-effective web-applicationd deployment on DigitalOcean Kubernetes. how to deploy a scalable, containerized web applicaiton on DigitalOcean using Kubernetes. 
 ## Resources 
-
+- [DigitalOcean Kubernetes Documentation](https://www.digitalocean.com/docs/kubernetes/)
+- [Kubernetes Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
+- [Build and Deploy Your First Image to Your First Cluster](https://docs.digitalocean.com/products/kubernetes/getting-started/deploy-image-to-cluster/)
 
 
    
