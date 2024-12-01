@@ -135,9 +135,17 @@ doct auth init
    ```
 
 8) Enable autoscaling
-   - Enable Horizontal pod autoscaling (HPA) based on CPU usage
+   - Setup horizontal pod autoscaling (HPA) based on CPU usage
+   - Setup cluster autoscaling 
 9) Monitor and scale the application
    - Check the status of your cluster and pods
+
+   ```
+   kubectl get nodes
+   kubectl get pods
+   kubectl get hpa
+   ```
+   
    - Scale the application
 10) Cost optimization
    - Autoscaling with HPA and cluster technicques
