@@ -57,23 +57,72 @@ doct auth init
    ```
   
 3) Containerize the application
-   - Create a Dockerfile to containerize the app
-   - Build the Docker image
-   - Run the container locally to test
-4) Push the Docker image to DigitalOcean
-   - Create a contianer registry on DigitalOcean
-   - Tag and push the Docker image
-5) Create and deploy a Kubernetes cluster
-   - Create a Kubernetes cluster
-   - Deploy the application to Kubernetes
-6) Expose the application
+   - Create Dockerfile
+
+   ```
+   # Use an official Python runtime as a parent image
+   FROM python
+
+   # Set the working directory to /app
+   WORKDIR /app
+
+   # Copy the current directory contents into the container at /app
+   ADD . /app   
+
+   # Install any needed packages specified in requirements.txt
+   RUN pip install -r requirements.txt
+
+   # Make port 80 available to the world outside this container
+   EXPOSE 80
+
+   # Define environment variable
+   ENV NAME World
+
+   # Run app.py when the container launches
+   CMD ["python", "app.py"]
+   ```
+
+   - Build and test locally
+
+   ```
+   docker build -t my-python-app .
+   docker run -p 80:80 my-python-app  
+   ```
+   
+3) Deploy to DigitalOcean container registry
+   - Create registry
+
+   ```
+   doctl registry create <your-registry-name>
+   ```
+   
+   - Login to registry
+
+   ```
+   doctl registry login
+   ```
+
+   - Tag and push image
+
+   ```
+   docker tag my-python-app registry.digitalocean.com/<your-registry-name>/my-python-app
+   docker push registry.digitalocean.com/<your-registry-name>/my-python-app 
+   ```
+   
+5) Create Kubernetes cluster
+
+   ```
+   doctl kubernetes cluster create <your-cluster-name> --tag do-tutorial --auto-upgrade=true --node-pool "name=mypool;count=2;auto-scale=true;min-nodes=1;max-   nodes=3;tag=do-tutorial" 
+   ```
+   
+7) Expose the application
    - Expose the application with a load balancer to make it accessible externally
-7) Enable autoscaling
+8) Enable autoscaling
    - Enable Horizontal pod autoscaling (HPA) based on CPU usage
-8) Monitor and scale the application
+9) Monitor and scale the application
    - Check the status of your cluster and pods
    - Scale the application
-9) Cost optimization
+10) Cost optimization
    - Autoscaling with HPA and cluster technicques
    - Load balancing
    - Spot instances
