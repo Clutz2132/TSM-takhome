@@ -115,8 +115,25 @@ doct auth init
    doctl kubernetes cluster create <your-cluster-name> --tag do-tutorial --auto-upgrade=true --node-pool "name=mypool;count=2;auto-scale=true;min-nodes=1;max-   nodes=3;tag=do-tutorial" 
    ```
    
-7) Expose the application
-   - Expose the application with a load balancer to make it accessible externally
+7) Deploy application to Kubernetes 
+   - Authorize registry
+
+  ```
+  doctl registry kubernetes-manifest | kubectl apply -f –
+  ```
+
+   - Deploy Application
+
+   ```
+   kubectl create deployment my-python-app --image=registry.digitalocean.com/<your-registry-name>/my-python-app 
+   ```
+
+   - Expose with load balancer
+
+   ```
+   kubectl expose deployment my-python-app --type=LoadBalancer --port 80 --target-port 80
+   ```
+
 8) Enable autoscaling
    - Enable Horizontal pod autoscaling (HPA) based on CPU usage
 9) Monitor and scale the application
