@@ -147,14 +147,21 @@ doct auth init
    ```
    
    - Scale the application
+  
+   ```
+   kubectl scale deployment/my-python-app --replicas=20
+   ```
+   
 10) Cost optimization
    - Autoscaling with HPA and cluster technicques
    - Load balancing
    - Spot instances
-   - Right sizing nodes based on resource utilization metrics
+   - Right size nodes based on resource utilization metrics
 
 ## Conclusion 
-This project demonstrated how to deploy a scalable, containerized web applicaiton on DigitalOcean using Kubernetes. 
+
+This project demonstrates a scalable, cost-effective web-applicationd deployment on DigitalOcean Kubernetes. how to deploy a scalable, containerized web applicaiton on DigitalOcean using Kubernetes. 
+## Resources 
 
 
 
