@@ -26,8 +26,9 @@ Put snippet of diagram here
 
 1) Authenticate DigitalOcean CLI
    
-'''bash 
+'''
 doct auth init 
+'''
 
 3) Create the Flask application
    - Create a new directory for your project
