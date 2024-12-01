@@ -1,4 +1,4 @@
-# TSM-takhome
+# TCSM-takhome
 
 # Scalable Web-Application Deployment on DigitalOcean
 This project demonstrates how to build and deploy a scalable web application on DigitalOcean using Kubernetets. The application is built with Flask, containerized using Docker, and deployed on a Kubernetes cluster. The deployment includes load balancing, autoscaling, and cost optimizaion. 
