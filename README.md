@@ -35,22 +35,27 @@ doct auth init
 
    ```
    from flask import Flask
-import os
-import socket
+   import os
+   import socket
 
-app = Flask(__name__)
+   app = Flask(__name__)
 
-@app.route("/")
-def hello():
-    html = """Hello {name}!
-    Hostname: {hostname}"""
-    return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname())
+   @app.route("/")
+   def hello():
+       html = """Hello {name}!
+       Hostname: {hostname}"""
+       return html.format(name=os.getenv("NAME", "world"), hostname=socket.gethostname())
 
-if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80)
+   if __name__ == "__main__":
+       app.run(host='0.0.0.0', port=80)
     ```
 
-   - Create a requirements.txt file to specify dependendinces
+   - Create a requirements.txt file
+
+   ```
+   Flask
+   ```
+  
 3) Dockerize the application
    - Create a Dockerfile to containerize the app
    - Build the Docker image
