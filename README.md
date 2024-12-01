@@ -56,7 +56,7 @@ doct auth init
    Flask
    ```
   
-3) Dockerize the application
+3) Containerize the application
    - Create a Dockerfile to containerize the app
    - Build the Docker image
    - Run the container locally to test
