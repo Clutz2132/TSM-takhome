@@ -17,12 +17,6 @@ This project demonstrates how to build and deploy a scalable web application on 
 - Kubernetes CLI (kubectl)
 - Docker
 
-## Architecture 
-
-![Uploading image.jpeg…]()
-
-
-
 ## Setup Instructions  
 
 1) Authenticate DigitalOcean CLI
