@@ -159,8 +159,6 @@ This project demonstrates how to deploy a scalable, containerized web-applicatio
 ## Resources 
 - [DigitalOcean Kubernetes Documentation](https://www.digitalocean.com/docs/kubernetes/)
 - [Kubernetes Horizontal Pod Autoscaler](https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/)
-- [Build and Deploy Your First Image to Your First Cluster](https://docs.digitalocean.com/products/kubernetes/getting-started/deploy-image-to-cluster/)
-
 
    
 
