@@ -19,7 +19,8 @@ This project demonstrates how to build and deploy a scalable web application on 
 
 ## Architecture 
 
-Put snippet of diagram here
+![Uploading image.jpeg…]()
+
 
 
 ## Setup Instructions  
